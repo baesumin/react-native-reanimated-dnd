@@ -1,18 +1,10 @@
 {
-  "name": "@luudoanh/react-native-reanimated-dnd",
-  "version": "1.3.0",
+  "name": "react-native-reanimated-dnd",
+  "version": "1.3.1",
   "description": "A powerful drag-and-drop library for React Native using Reanimated 4 - Updated for compatibility",
-  "main": "lib/index.js",
-  "module": "lib/index.js",
-  "types": "lib/index.d.ts",
-  "type": "module",
-  "exports": {
-    ".": {
-      "types": "./lib/index.d.ts",
-      "import": "./lib/index.js",
-      "default": "./lib/index.js"
-    }
-  },
+  "main": "index.ts",
+  "module": "index.ts",
+  "types": "index.ts",
   "sideEffects": false,
   "scripts": {
     "build": "tsc && npm run minify",
@@ -33,13 +25,13 @@
     "dnd",
     "gesture-handler"
   ],
-  "author": "luudoanh (forked from Vishesh Raheja)",
+  "author": "baesumin (forked from Vishesh Raheja)",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/luudoanh/react-native-reanimated-dnd.git"
+    "url": "git+https://github.com/baesumin/react-native-reanimated-dnd.git"
   },
-  "homepage": "https://github.com/luudoanh/react-native-reanimated-dnd",
+  "homepage": "https://github.com/baesumin/react-native-reanimated-dnd",
   "peerDependencies": {
     "react": ">=16.8.0",
     "react-native": ">=0.60.0",
