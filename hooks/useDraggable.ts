@@ -463,18 +463,13 @@ export const useDraggable = <TData = unknown>(
       let finalTyValue: number;
 
       if (hitSlotData && hitSlotId !== null) {
+        // processDropAndAnimate runs on JS thread, so call directly (not scheduleOnRN)
         if (hitSlotData.onDrop) {
-          scheduleOnRN(hitSlotData.onDrop, draggableData);
+          hitSlotData.onDrop(draggableData);
         }
 
-        scheduleOnRN(
-          registerDroppedItem,
-          internalDraggableId,
-          hitSlotData.id,
-          draggableData
-        );
-
-        scheduleOnRN(setState, DraggableState.DROPPED);
+        registerDroppedItem(internalDraggableId, hitSlotData.id, draggableData);
+        setState(DraggableState.DROPPED);
 
         const alignment: DropAlignment = hitSlotData.dropAlignment || "center";
         const offset: DropOffset = hitSlotData.dropOffset || { x: 0, y: 0 };
